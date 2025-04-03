@@ -4,6 +4,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def inicial():
-    return render_template('index.html')
+    return render_template('inicial.html')
 
 app.run(debug=True)

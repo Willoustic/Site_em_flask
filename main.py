@@ -6,4 +6,8 @@ app = Flask(__name__)
 def inicial():
     return render_template('inicial.html')
 
+@app.route('/contato')
+def contato():
+    return render_template('contato.html')
+
 app.run(debug=True)

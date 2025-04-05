@@ -14,10 +14,9 @@
     </header>
 
     <nav>
-        <a href="#">Início</a>
-        <a href="#">Produtos</a>
-        <a href="#">Sobre Nós</a>
-        <a href="{{ url_for(contato) }}">Contato</a>
+        <a href="{{ url_for('inicial') }}">Início</a>
+        <a href="{{ url_for('manun') }}">Produtos</a>
+        <a href="{{ url_for('contato') }}">Contato</a>
     </nav>
     {% block body %}
     {% endblock %}

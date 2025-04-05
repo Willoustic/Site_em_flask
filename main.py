@@ -10,4 +10,8 @@ def inicial():
 def contato():
     return render_template('contato.html')
 
+@app.route('/manuntençao')
+def manun():
+    return render_template('manun.html')
+
 app.run(debug=True)

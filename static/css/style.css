@@ -5,13 +5,17 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f7f7f7;
+    flex-direction: column;
 }
 
 header {
-    background-color: greenyellow;
-    color: #000000;
-    padding: 20px;
+    background-color: rgb(0, 129, 11);
+    color: #eeec71;
+    padding: 2vh;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-size: large;
 }
 
 header h1 {
@@ -22,58 +26,97 @@ nav {
     display: flex;
     justify-content: center;
     background-color: rgb(20, 245, 0);
-    padding: 10px;
+    padding: 1.5vh;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 5vh;
     font-size: 1.2em;
 }
 
 nav a:hover {
-    color: #f39c12;
+    color: #95ff6b;
 }
 
 .hero {
+    flex: 1;
     background: url('https://example.com/sua-imagem.jpg') no-repeat center center/cover;
-    height: 400px;
-    display: flex;
+    height: 30vh;
+    display: flexbox;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #000000;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.hero hr {
+    width: 100%;
+}
+
+.manun {
+    flex: 1;
+    background: url('https://example.com/sua-imagem.jpg') no-repeat center center/cover;
+    height: 55vh;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    color: #000000;
     text-align: center;
     font-size: 2.5em;
 }
 
 .content {
-    padding: 40px;
+    flex: 1;
+    padding: 5vh;
     text-align: center;
-}
-
-.btn {
-    background-color: #f39c12;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 1.5em;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.btn:hover {
-    background-color: #e67e22;
+    margin-bottom: 0.3vh
 }
 
 footer {
-    background-color: #34495e;
+    background-color: #007000;
     color: #fff;
-    display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     width: 100%;
-    bottom: 0;
+    bottom: 0vh;
+    margin-bottom: 0%;
+    height: 10vh;
+    display: flex;
+    align-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer:hover {
+    color: rgb(72, 255, 56);
+}
+
+.contact {
+    flex: 1;
+    line-height: normal;
+    text-align: center;
+    align-self: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10vh;
+    height: 45vh;
+}
+
+.contact-item {
+    font-size: 18px;
+    margin: 2vh 0;
+}
+.contact-item a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+.contact-item a:hover {
+    text-decoration: underline;
 }

@@ -1,17 +1,8 @@
 from flask import Flask, url_for, render_template
+from configure import configure_all
 
 app = Flask(__name__)
 
-@app.route('/')
-def inicial():
-    return render_template('inicial.html')
-
-@app.route('/contato')
-def contato():
-    return render_template('contato.html')
-
-@app.route('/manuntençao')
-def manun():
-    return render_template('manun.html')
+configure_all(app)
 
 app.run(debug=True)

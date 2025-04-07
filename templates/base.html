@@ -11,12 +11,13 @@
     <header>
         <h1>Camaleão Fantasias</h1>
         <p>Transforme-se com as melhores fantasias!</p>
+        <dialog>a</dialog>
     </header>
 
     <nav>
-        <a href="{{ url_for('inicial') }}">Início</a>
-        <a href="{{ url_for('manun') }}">Produtos</a>
-        <a href="{{ url_for('contato') }}">Contato</a>
+        <a href="{{ url_for('clientes.inicial') }}">Início</a>
+        <a href="{{ url_for('clientes.manun') }}">Produtos</a>
+        <a href="{{ url_for('clientes.contato') }}">Contato</a>
     </nav>
     {% block body %}
     {% endblock %}

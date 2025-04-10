@@ -13,3 +13,11 @@ def contato():
 @clientes.route('/manuntençao')
 def manun():
     return render_template('manun.html')
+
+@clientes.route('/login')
+def login():
+    return render_template('login.html')
+
+@clientes.route('/cadastro')
+def cadastro():
+    return render_template('cadastro.html')

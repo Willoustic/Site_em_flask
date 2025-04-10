@@ -1,0 +1,48 @@
+
+.login-container {
+text-align: center;
+align-self: center;
+width: 25%;
+margin-left: 37%;
+height: 45.25vh;
+}
+
+.login-text {
+margin-top: 7vh;
+color: #129700;
+text-align: center;
+margin-bottom: 2vh;
+}
+
+.input-group {
+margin-bottom: 15px;
+}
+
+.input-group label {
+display: block;
+margin-bottom: 5px;
+color: #555;
+}
+
+.input-group input {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+button[type="submit"] {
+width: 106%;
+padding: 10px;
+background: #2bff00;
+border: none;
+color: white;
+font-weight: bold;
+border-radius: 4px;
+cursor: pointer;
+transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+background: #057901;
+}

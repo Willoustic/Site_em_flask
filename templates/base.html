@@ -6,9 +6,14 @@
     <title>Camaleão Fantasias</title>
     <!-- Usando url_for para apontar para a pasta static -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
 </head>
 <body>
     <header>
+        <div class="top-buttons">
+            <a href="{{ url_for('clientes.login') }}" class="btn">Login</a>
+            <a href="{{ url_for('clientes.cadastro') }}" class="btn">Cadastro</a>
+        </div>
         <h1>Camaleão Fantasias</h1>
         <p>Transforme-se com as melhores fantasias!</p>
         <dialog>a</dialog>

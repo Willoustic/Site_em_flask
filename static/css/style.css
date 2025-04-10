@@ -8,6 +8,8 @@ body {
     flex-direction: column;
 }
 
+
+
 header {
     background-color: rgb(0, 129, 11);
     color: #eeec71;
@@ -16,6 +18,19 @@ header {
     font-family: 'Times New Roman', Times, serif;
     font-style: oblique;
     font-size: large;
+}
+
+.top-buttons {
+    text-align: right;
+}
+
+.btn {
+    color: #eeec71;
+    background-color: rgb(0, 129, 11);
+    border-color: rgb(0, 129, 11);
+    box-shadow: none;
+    height: 3vh;
+    width: 9vh;
 }
 
 header h1 {

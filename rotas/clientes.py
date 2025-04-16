@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
+from bancos.models.clientes import Cliente
 
 clientes = Blueprint('clientes', __name__)
 
@@ -18,6 +19,23 @@ def manun():
 def login():
     return render_template('login.html')
 
-@clientes.route('/cadastro')
+@clientes.route('/cadastro', methods=["GET"])
 def cadastro():
-    return render_template('cadastro.html')
+    return render_template('cadastro.html', accept=None)
+
+@clientes.route('/cadastro', methods=["POST"])
+def cadastrar():
+
+    nomeus = request.form['nome']
+    emailus = request.form['email']
+    senhaus = request.form['senha']
+    telefoneus = request.form['telefone']
+
+    print(nomeus, emailus, senhaus, telefoneus)
+
+    try:
+        cliente = Cliente.create(nome=nomeus, email=emailus, senha=senhaus, telefone=telefoneus)
+    except:
+        return render_template('cadastro.html', accept=False)
+    else:
+        return render_template('cadastro.html', accept=True)

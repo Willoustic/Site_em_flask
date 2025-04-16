@@ -11,10 +11,17 @@
 </head>
 <body>
     <header>
+        {% if cliente %}
+        <div class="Profile">
+            <p>Logado</p>
+        </div>
+        {% else %}
         <div class="top-buttons">
             <a href="{{ url_for('clientes.login') }}" class="btn">Login</a>
             <a href="{{ url_for('clientes.cadastro') }}" class="btn">Cadastro</a>
         </div>
+        {% endif %}
+
         <h1>Camaleão Fantasias</h1>
         <p>Transforme-se com as melhores fantasias!</p>
         <dialog>a</dialog>

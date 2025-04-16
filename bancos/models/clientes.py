@@ -4,6 +4,7 @@ import datetime
 
 class Cliente(Model):
     nome = CharField()
+    usuario = CharField(unique=True)
     email = CharField(unique=True)
     telefone = CharField(unique=True)
     senha = CharField()

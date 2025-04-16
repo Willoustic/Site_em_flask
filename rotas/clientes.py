@@ -28,21 +28,23 @@ def cadastrar():
 
     nomeus = request.form['nome']
     emailus = request.form['email']
+    usuarious = request.form['usuario']
     senhaus = request.form['senha']
     telefoneus = request.form['telefone']
 
-    print(nomeus, emailus, senhaus, telefoneus)
-
-    if Cliente.select().where(Cliente.email == emailus).exists():
-        texto = "Email já cadastrado"
-        if Cliente.select().where(Cliente.telefone == telefoneus).exists():
-            texto = "Email e Telefone já cadastrados"
+    if Cliente.select().where(Cliente.usuario == usuarious).exists():
+        texto = "Usuario já em uso"
     else:
-        if Cliente.select().where(Cliente.telefone == telefoneus).exists():
-            texto = "Telefone já cadastrado"
+        if Cliente.select().where(Cliente.email == emailus).exists():
+            texto = "Email já cadastrado"
+            if Cliente.select().where(Cliente.telefone == telefoneus).exists():
+                texto = "Email e Telefone já cadastrados"
+        else:
+            if Cliente.select().where(Cliente.telefone == telefoneus).exists():
+                texto = "Telefone já cadastrado"
 
     try:
-        cliente = Cliente.create(nome=nomeus, email=emailus, senha=senhaus, telefone=telefoneus)
+        cliente = Cliente.create(nome=nomeus, usuario=usuarious, email=emailus, senha=senhaus, telefone=telefoneus)
     except ValueError as e:
         return render_template('cadastro.html', texto=str(e))
     except:

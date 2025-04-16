@@ -8,6 +8,15 @@ height: 45.10vh;
 margin-bottom: 2.15vh;
 }
 
+.c-form-cadastro {
+    text-align: center;
+    align-self: center;
+    width: 25%;
+    margin-left: 37%;
+    height: 45.10vh;
+    margin-bottom: 9vh;
+}
+
 .login-text {
 margin-top: 5vh;
 color: #129700;

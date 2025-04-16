@@ -4,11 +4,15 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 
 <h2 class="login-text">CADASTRO</h2>
-<form action="/cadastro" id="form-json" class="c-form" method="post" c-reload=true>
+<form action="/cadastro" id="form-json" class="c-form-cadastro" method="post" c-reload=true>
     <div class="input-group">
         <label for="nome">Nome completo</label>
         <input type="nome" name="nome" placeholder="Digite seu nome" required>
     </div>
+    <div class="input-group">
+      <label for="usuario">Usuário</label>
+      <input type="usuario" name="usuario" placeholder="Digite seu usuario" required>
+  </div>
     <div class="input-group">
         <label for="email">E-mail</label>
         <input type="email" name="email" placeholder="Digite seu e-mail" required>

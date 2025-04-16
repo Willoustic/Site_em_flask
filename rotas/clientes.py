@@ -1,10 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, session, url_for
 from bancos.models.clientes import Cliente
-import hashlib
 from time import sleep 
-
-def hash_senha(senha):
-    return hashlib.sha256(senha.encode()).hexdigest()
 
 clientes = Blueprint('clientes', __name__)
 
@@ -77,6 +73,6 @@ def cadastrar():
     except:
         return render_template('cadastro.html', texto=texto)
     else:
-        redirect(url_for('clientes.login'))
+        return redirect(url_for('clientes.login'))
 
     

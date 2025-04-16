@@ -13,7 +13,7 @@
     <header>
         {% if session.get('usuario') %}
             <div class="logado">
-                <b>{{ session['usuario'] }}</b> | <a class="meu-link" href="/logout">Logout</a>
+                <b class="usuario">{{ session['usuario'] }}</b> | <a class="meu-link" href="/logout">Logout</a>
             </div>
         {% else %}
         <div class="top-buttons">

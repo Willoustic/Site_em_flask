@@ -32,6 +32,7 @@ def cadastrar():
     telefoneus = request.form['telefone']
 
     print(nomeus, emailus, senhaus, telefoneus)
+
     if Cliente.select().where(Cliente.email == emailus).exists():
         texto = "Email já cadastrado"
         if Cliente.select().where(Cliente.telefone == telefoneus).exists():
@@ -42,6 +43,8 @@ def cadastrar():
 
     try:
         cliente = Cliente.create(nome=nomeus, email=emailus, senha=senhaus, telefone=telefoneus)
+    except ValueError as e:
+        return render_template('cadastro.html', texto=str(e))
     except:
         return render_template('cadastro.html', texto=texto)
     else:

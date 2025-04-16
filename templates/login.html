@@ -3,15 +3,17 @@
 {% block body %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 <h2 class="login-text">LOGIN</h2>
-<div class="c-form">
+<form action="/login" id="form-json" class="c-form" method="post" c-reload=trueclass="c-form">
       <div class="input-group">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="Digite seu e-mail" required>
+        <label for="usuario">Usuário</label>
+        <input type="usuario" name="usuario" id="usuario" placeholder="Digite seu usuario" required>
       </div>
       <div class="input-group">
         <label for="senha">Senha</label>
-        <input type="password" id="senha" placeholder="Digite sua senha" required>
+        <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required minlength="8">
       </div>
       <button type="submit">Entrar</button>
-</div>
+      
+      <p class="login-verify">{{ erro }}</p>
+    </form>
 {% endblock %}

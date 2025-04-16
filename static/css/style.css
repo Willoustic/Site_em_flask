@@ -19,12 +19,25 @@ header {
     font-style: oblique;
     font-size: large;
 }
+.logado {
+    text-align: right;
+}
+
+.meu-link {
+    text-decoration: none;       /* Remove o sublinhado */
+    color: rgb(229, 255, 0);                /* Cor do texto */
+  }
+  
+  .meu-link:hover {
+    color: #a4c900;
+  }
 
 .top-buttons {
     text-align: right;
 }
 
 .btn {
+    text-decoration: none; 
     color: #eeec71;
     background-color: rgb(0, 129, 11);
     border-color: rgb(0, 129, 11);

@@ -1,5 +1,10 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect, session, url_for
 from bancos.models.clientes import Cliente
+import hashlib
+from time import sleep 
+
+def hash_senha(senha):
+    return hashlib.sha256(senha.encode()).hexdigest()
 
 clientes = Blueprint('clientes', __name__)
 
@@ -19,6 +24,28 @@ def manun():
 def login():
     return render_template('login.html')
 
+@clientes.route('/login', methods=["POST"])
+def logar():
+    erro = ''
+    if request.method == 'POST':
+        username = request.form['usuario'].capitalize()
+        password = request.form['senha']
+        try:
+            usuario = Cliente.get(Cliente.usuario == username)
+            if usuario.senha == password:
+                session['usuario'] = username
+                return redirect('/')
+            else:
+                erro = 'Senha incorreta.'
+        except Cliente.DoesNotExist:
+            erro = 'Usuário não encontrado.'
+    return render_template('login.html', erro=erro)
+
+@clientes.route('/logout')
+def logout():
+    session.pop('usuario', None)
+    return redirect('/')
+
 @clientes.route('/cadastro', methods=["GET"])
 def cadastro():
     return render_template('cadastro.html', accept=None)
@@ -28,7 +55,7 @@ def cadastrar():
 
     nomeus = request.form['nome']
     emailus = request.form['email']
-    usuarious = request.form['usuario']
+    usuarious = request.form['usuario'].capitalize()
     senhaus = request.form['senha']
     telefoneus = request.form['telefone']
 
@@ -50,4 +77,6 @@ def cadastrar():
     except:
         return render_template('cadastro.html', texto=texto)
     else:
-        return render_template('cadastro.html', accept=True)
+        redirect(url_for('clientes.login'))
+
+    

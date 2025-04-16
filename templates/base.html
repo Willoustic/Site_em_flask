@@ -11,14 +11,13 @@
 </head>
 <body>
     <header>
-        {% if cliente %}
-        <div class="Profile">
-            <p>Logado</p>
-        </div>
+        {% if session.get('usuario') %}
+            <div class="logado">
+                <b>{{ session['usuario'] }}</b> | <a class="meu-link" href="/logout">Logout</a>
+            </div>
         {% else %}
         <div class="top-buttons">
-            <a href="{{ url_for('clientes.login') }}" class="btn">Login</a>
-            <a href="{{ url_for('clientes.cadastro') }}" class="btn">Cadastro</a>
+            <a href="{{ url_for('clientes.login') }}" class="btn">Login</a> | <a href="{{ url_for('clientes.cadastro') }}" class="btn">Cadastro</a>
         </div>
         {% endif %}
 

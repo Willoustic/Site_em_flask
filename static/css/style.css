@@ -75,7 +75,6 @@ nav a:hover {
 
 .hero {
     flex: 1;
-    background: url('https://example.com/sua-imagem.jpg') no-repeat center center/cover;
     height: 30vh;
     display: flexbox;
     font-family: 'Times New Roman', Times, serif;

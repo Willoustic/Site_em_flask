@@ -1,0 +1,50 @@
+
+  
+  .grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1vh, 1vh));
+    gap: 1h;
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center; /* alinhado ao centro */
+    height: 100%;
+  }
+  
+  .produto {
+    width: 30vh;
+    height: 30vh;
+    background-color: white;
+    border: 1vh solid #ddd;
+    border-radius: 2vh;    
+    margin: 5vh 5vh 5vh; 
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;  
+
+  }
+  
+  .produto:hover {
+    transform: scale(1.03);
+  }
+  
+  .produto img {
+    display: block;
+    margin: 0;
+    width: 15vh;
+    height: 15vh;
+    align-items: center;
+  }
+  
+  .produto .nome {
+    margin-bottom: 0vh;
+    align-content: left;
+    margin-left: 3vh;
+}
+
+  .produto .preco {
+    margin-bottom: 0vh;
+    margin-right: 0vh;
+    margin-left: 16vh;
+  }
+  

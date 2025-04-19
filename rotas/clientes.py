@@ -12,9 +12,9 @@ def inicial():
 def contato():
     return render_template('contato.html')
 
-@clientes.route('/manuntençao')
+@clientes.route('/produtos')
 def manun():
-    return render_template('manun.html')
+    return render_template('produtos.html')
 
 @clientes.route('/login')
 def login():
